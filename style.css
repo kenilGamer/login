@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_640.jpg);
+    background-size: cover;
+
+}
+
+.box{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 390px;
+    height: 420px;
+    background: rgba(92, 85, 85, 0.084);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    width: 390px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#12ffef,#8512ff,#12ffef,#12ff1e);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+    
+}
+.box::after{
+    content: '';
+    position: absolute;
+    width: 390px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#ff1a12,#12ffef,#ff1212,#12ffef);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
+    100%{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
+.box form{
+    position: absolute;
+    inset: 4px;
+    background-color: #222;
+    padding: 50px 45px;
+    display:flex;
+    flex-direction: column;
+    z-index: 2;
+}
+.box form h2{
+    color: aliceblue;
+    font-weight: 400;
+    letter-spacing:  0.1em;
+}
+#inputbox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+#inputbox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: navy;
+    box-shadow: none;
+    color: #763b3b;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+#inputbox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    color: #f3f3f3b4;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+#inputbox input:valid ~ span,
+#inputbox input:focus ~ span{
+    color: aliceblue;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+    -webkit-transform: translateY(-34px);
+    -moz-transform: translateY(-34px);
+    -ms-transform: translateY(-34px);
+    -o-transform: translateY(-34px);
+}
+#inputbox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5;
+    pointer-events: none;
+
+}
+#inputbox input:valid ~ i,
+#inputbox input:focus ~ i{
+    height: 30px;
+}
+#links{
+    display: flex;
+    justify-content: space-between;
+
+}
+#links a{
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #d0cccc;
+    text-decoration: none;
+}
+#links a:hover,
+#links a:nth-child(2){
+    color: #fff;
+}
+#inputbox [type="submit"]{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 5px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+}
+#inputbox [type="submit"]:active{
+    opacity: 0.8;
+}
